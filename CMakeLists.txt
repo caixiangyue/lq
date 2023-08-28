@@ -8,18 +8,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(src_list test.cc)
 include(FetchContent)
 
-FetchContent_Declare(
-    fmt
-    GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-    GIT_TAG master
-)
+#FetchContent_Declare(
+#    fmt
+#    GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+#    GIT_TAG master
+#)
 FetchContent_Declare(
     googletest
     GIT_REPOSITORY https://github.com/google/googletest.git
     GIT_TAG main
 )
 
-FetchContent_MakeAvailable(fmt googletest)
+FetchContent_MakeAvailable(googletest)
 
 # add the executable
 add_executable(${PROJECT_NAME} ${src_list})
@@ -29,6 +29,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC
                            )
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
-        fmt::fmt
+        #fmt::fmt
         gtest_main
 )
